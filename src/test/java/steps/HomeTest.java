@@ -1,23 +1,32 @@
 package steps;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.AfterClass;
 
 import base.Base;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
+import io.qameta.allure.Allure;
 import pages.HomePage;
 
 public class HomeTest extends Base {
 
+	@Before
+	public void startbrowser() throws IOException {
+		driver = SetupDriver();
+	}
+
 	@Given("user navigate to application url")
 	public void user_navigate_to_application_url() throws IOException {
-		driver = SetupDriver();
+
 		driver.get(prop.getProperty("url"));
-	} 
+	}
 
 	@When("^user click on Create an Account link$")
 	public void user_click_on_createAccount_link() {
@@ -31,15 +40,17 @@ public class HomeTest extends Base {
 		home.verification_creat_accounttxt();
 	}
 
-	@After()
+	@After
 	public void closeBrowser(Scenario scenario) {
 
 		if (scenario.isFailed()) {
-			Allure.addAttachment("Failed Screen Shot");
-			byte[] screenshot = ((TakesScreenshot) .getScreenshotAs(OutputType.BYTES);
+			byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+			Allure.addAttachment("Failed Screen Shot", new ByteArrayInputStream(screenshot));
+
 			scenario.attach(screenshot, "image/png", "screenshot");
 			driver.quit();
 		}
 
 	}
+
 }

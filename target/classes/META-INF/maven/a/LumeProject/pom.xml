@@ -1,6 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>a</groupId>
 	<artifactId>LumeProject</artifactId>
@@ -53,12 +51,7 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.11.0</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber7-jvm -->
-		<dependency>
-			<groupId>io.qameta.allure</groupId>
-			<artifactId>allure-cucumber7-jvm</artifactId>
-			<version>2.19.0</version>
-		</dependency>
+
 
 		<!-- POI JARS STARTS -->
 
@@ -105,11 +98,15 @@
 			<version>2.0.6</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber7-jvm -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-cucumber7-jvm</artifactId>
+			<version>2.20.1</version>
+		</dependency>
+
 
 	</dependencies>
-
-
-
 	<build>
 		<plugins>
 			<plugin>
