@@ -1,0 +1,3 @@
+steps\RegistrationTest.class
+steps\HomeTest.class
+runner\TestRunner.class

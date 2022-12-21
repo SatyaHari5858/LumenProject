@@ -1,0 +1,4 @@
+pages\ResgistrationPage.class
+base\Base.class
+hooks\Hooks.class
+pages\HomePage.class
