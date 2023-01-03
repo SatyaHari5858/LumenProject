@@ -27,12 +27,16 @@ public class LoginPage extends Base {
 		signin.click();
 	}
 
-	@FindBy(xpath = "//div[@class='control']/following::input[@name='email']")
+	@FindBy(xpath = "//div[@class='control']/following::input[@name='login[username]']")
 	@CacheLookup
 	WebElement email;
 
 	public void enter_email() {
 		email.sendKeys(prop.getProperty("email"));
+	}
+
+	public void enter_invalid_email() {
+		email.sendKeys(prop.getProperty("invaliduname"));
 	}
 
 	@FindBy(xpath = "//div[@class='control']/following::input[@id='pass']")
@@ -41,7 +45,11 @@ public class LoginPage extends Base {
 
 	public void enter_password() {
 		password.sendKeys(prop.getProperty("password"));
-		;
+
+	}
+
+	public void enter_invalid_password() {
+		password.sendKeys(prop.getProperty("invalidpass"));
 	}
 
 	@FindBy(xpath = "//fieldset[@class='fieldset login']//button[@id='send2']")
@@ -67,6 +75,14 @@ public class LoginPage extends Base {
 	public void failedsverification() {
 		String logintxtF = loginfailtxt.getText();
 		System.out.println(logintxtF);
+	}
+	
+	@FindBy(xpath = "//div[@class='page messages']/descendant::div[contains(text(),'Please wait and')]")
+	WebElement loginerror;
+	public void userseeloginerror() {
+		String loge = loginerror.getText();
+		System.out.println("login failed text :"+ loge);
+		
 	}
 
 }

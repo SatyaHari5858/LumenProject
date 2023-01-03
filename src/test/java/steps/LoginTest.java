@@ -34,12 +34,24 @@ public class LoginTest extends Base {
 	@Then("^user should see \"([^\"]*)\"$")
 	public void user_should_see_something(String arg) throws Throwable {
 		try {
+			Thread.sleep(3000);
 			log_in.successverification();
 
 		} catch (Exception e) {
 			log_in.failedsverification();
 			e.getMessage();
 		}
+	}
+
+	@When("^user enter invalid username and password$")
+	public void user_enter_invalid_username_and_password() {
+		log_in.enter_invalid_email();
+		log_in.enter_invalid_password();
+	}
+
+	@Then("^user should see error message \"([^\"]*)\"$")
+	public void user_should_see_error_message_something(String errormessage) {
+		log_in.userseeloginerror();
 	}
 
 }

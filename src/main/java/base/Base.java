@@ -14,8 +14,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.HomePage;
+import pages.IBasePage;
 import pages.LoginPage;
+import pages.MenPage;
 import pages.ResgistrationPage;
+import pages.WomenPage;
 
 public class Base {
 
@@ -25,6 +28,9 @@ public class Base {
 	public LoginPage log_in;
 	public HomePage home;
 	public ResgistrationPage registration;
+	public WomenPage women;
+	public MenPage men;
+	public IBasePage Ibase;
 	DesiredCapabilities capabilities;
 
 	public WebDriver SetupDriver() throws IOException {

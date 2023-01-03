@@ -1,5 +1,6 @@
-Feature: Testing the LUMA E-Commerce website using selenium JAVA
+Feature: user new account registration with LUMA Application
 
+  @Registration
   Scenario: creating new account for user
     Given user navigate to application url
     When user click on Create an Account link

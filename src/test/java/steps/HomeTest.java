@@ -1,18 +1,13 @@
 package steps;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.annotations.AfterClass;
 
 import base.Base;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
+import io.cucumber.java.*;
 import io.cucumber.java.en.*;
-import io.qameta.allure.Allure;
 import pages.HomePage;
 
 public class HomeTest extends Base {
@@ -45,12 +40,11 @@ public class HomeTest extends Base {
 
 		if (scenario.isFailed()) {
 			byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-			Allure.addAttachment("Failed Screen Shot", new ByteArrayInputStream(screenshot));
-
+			//Allure.addAttachment("Failed Screen Shot", new ByteArrayInputStream(screenshot));
 			scenario.attach(screenshot, "image/png", "screenshot");
-			driver.quit();
 		}
-
+		driver.close();
+		driver.quit();
 	}
 
 }

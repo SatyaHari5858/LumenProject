@@ -34,7 +34,14 @@ public class HomePage {
 		String txt = creat_accounttxt.getText();
 		System.out.println("verification text is " + txt);
 		Assert.assertEquals(txt, "Create New Customer Account");
-		
+
 	}
 
+	@FindBy(xpath = "//div[@class='section-items nav-sections-items']/descendant::span[text()='Women']")
+	WebElement womendd;
+
+	public void weomendd() {
+		womendd.click();
+
+}
 }

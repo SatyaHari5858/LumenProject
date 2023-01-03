@@ -1,3 +1,5 @@
+steps\LoginTest.class
 steps\RegistrationTest.class
+steps\WomenTest.class
 steps\HomeTest.class
 runner\TestRunner.class

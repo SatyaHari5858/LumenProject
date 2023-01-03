@@ -1,4 +1,6 @@
 pages\ResgistrationPage.class
+pages\LoginPage.class
 base\Base.class
 hooks\Hooks.class
 pages\HomePage.class
+pages\WomenPage.class
